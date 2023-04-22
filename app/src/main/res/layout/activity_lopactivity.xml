@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LOPActivity">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:background="#3399CC"
+        android:padding="10dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="35sp"
+            android:text="LỚP"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white" />
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Mã lớp:"/>
+            <EditText
+                android:id="@+id/edtMALOP"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:layout_span="3"
+                android:hint="mã lớp"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Tên lớp:"/>
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:id="@+id/edtTENLOP"
+                android:layout_span="3"
+                android:hint="tên lớp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="TSSV:"/>
+            <EditText
+                android:id="@+id/edtTSSV"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:layout_span="3"
+                android:hint="tổng số sinh viên"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="NTS:"/>
+            <EditText
+                android:id="@+id/edtNTS"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:layout_span="3"
+                android:hint="năm tuyển sinh"/>
+        </TableRow>
+
+        <LinearLayout
+            android:padding="15dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:gravity="right"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chọn Ngành"
+                />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_span="3"
+                android:contentDescription="Null"
+                android:minHeight="48dp" />
+        </LinearLayout>
+        <TableRow>
+            <Button
+                android:id="@+id/btnThemLOP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnSuaLOP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sửa"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnXoaLOP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xóa"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:textSize="15sp" />
+        </TableRow>
+        <LinearLayout
+            android:padding="15dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvLOP"/>
+        </LinearLayout>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

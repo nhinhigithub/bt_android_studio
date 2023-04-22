@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KHOAActivity">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:background="#3399CC"
+        android:padding="10dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="35sp"
+            android:text="KHOA"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white" />
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Mã khoa:"/>
+            <EditText
+                android:id="@+id/edtMAKHOA"
+                android:layout_span="3"
+                android:textSize="20sp"
+                android:hint="mã khoa"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Tên khoa:"/>
+            <EditText
+                android:id="@+id/edtTENKHOA"
+                android:layout_span="3"
+                android:textSize="20sp"
+                android:hint="tên khoa"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/btnThemKHOA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnSuaKHOA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sửa"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnXoaKHOA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xóa"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:textSize="15sp" />
+        </TableRow>
+        <LinearLayout
+            android:padding="15dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvKHOA"/>
+        </LinearLayout>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
