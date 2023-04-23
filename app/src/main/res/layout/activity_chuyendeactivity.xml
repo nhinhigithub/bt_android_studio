@@ -5,5 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CHUYENDEActivity">
-
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:background="#3399CC"
+        android:padding="10dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="35sp"
+            android:text="CHUYÊN ĐỀ"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white" />
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Mã chuyên đề:"/>
+            <EditText
+                android:id="@+id/edtMACD"
+                android:layout_span="3"
+                android:textSize="20sp"
+                android:hint="mã chuyên đề"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Tên chuyên đề:"/>
+            <EditText
+                android:id="@+id/edtTENCD"
+                android:layout_span="3"
+                android:textSize="20sp"
+                android:hint="tên chuyên đề"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Lý thuyết:"/>
+            <EditText
+                android:id="@+id/edtLT"
+                android:layout_span="3"
+                android:textSize="20sp"
+                android:hint="lý thuyết"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textStyle="bold|normal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Thực hành:"/>
+            <EditText
+                android:id="@+id/edtTH"
+                android:layout_span="3"
+                android:textSize="20sp"
+                android:hint="thực hành"/>
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/btnThemCD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnSuaCD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sửa"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnXoaCD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xóa"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:textSize="15sp" />
+        </TableRow>
+        <LinearLayout
+            android:padding="15dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvCD"/>
+        </LinearLayout>
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

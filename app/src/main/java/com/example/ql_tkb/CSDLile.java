@@ -13,7 +13,7 @@ public class CSDLile extends AppCompatActivity {
 
     String nameDB = "qltkb.db"; //Khai báo tên Database
     SQLiteDatabase database;
-    Button btnCreateDB, btnDeleteDB, btnCreateBANG, btnTblKHOA, btnTblGIANGVIEN, btnTblNGANH, btnTblLOP, btnTblCHUYENDE, btnKHOA, btnGIANGVIEN, btnNGANH, btnLOP, btnCHUYENDE;
+    Button btnCreateDB, btnDeleteDB, btnCreateBANG, btnKHOA, btnGIANGVIEN, btnNGANH, btnLOP, btnCHUYENDE, btnTKB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,8 @@ public class CSDLile extends AppCompatActivity {
         btnGIANGVIEN = (Button) findViewById(R.id.btnGIANGVIEN);
         btnNGANH = (Button) findViewById(R.id.btnNGANH);
         btnLOP = (Button) findViewById(R.id.btnLOP);
-
+        btnCHUYENDE = (Button) findViewById(R.id.btnCHUYENDE);
+        btnTKB = (Button) findViewById(R.id.btnTKB);
         //Gọi hàm tạo Database
         btnCreateDB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +96,21 @@ public class CSDLile extends AppCompatActivity {
             }
         });
 
+        btnCHUYENDE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CSDLile.this, CHUYENDEActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        btnTKB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CSDLile.this, TKBActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -142,7 +157,7 @@ public class CSDLile extends AppCompatActivity {
 
     //Tạo Table CHUYENDE
     public void createTblCHUYENDE(){
-        String sql = "CREATE TABLE tblCHUYENDE (MACHUYENDE TEXT PRIMARY KEY,TENCHUYENDE TEXT,LYTHUYET TEXT,THUCHANH TEXT)";
+        String sql = "CREATE TABLE tblCHUYENDE (MACHUYENDE TEXT PRIMARY KEY,TENCHUYENDE TEXT,LYTHUYET TEXT,THUCHANH TEXT);";
         if (doAction(sql) == true) {
             Toast.makeText(CSDLile.this, "Tạo Table [CHUYÊN ĐỀ] thành công", Toast.LENGTH_SHORT).show();
         } else {
@@ -152,12 +167,21 @@ public class CSDLile extends AppCompatActivity {
 
     //Tạo Table TKB
     public void createTblTKB(){
-        String sql ="CREATE TABLE TKB ("+
+        String sql ="CREATE TABLE tblTKB ("+
+
                 "MALOP TEXT NOT NULL,"+
                 "MAGV TEXT NOT NULL,"+
-                "MACD TEXT NOT NULL,"+
-                "PRIMARY KEY(MALOP, MAGV, MACD),"+
-                "FOREIGN KEY (MALOP) REFERENCES LOP(MALOP),";
+                "MACHUYENDE TEXT NOT NULL,"+
+
+                "NAMHOC TEXT NOT NULL,"+
+                "HOCKY TEXT NOT NULL,"+
+                "NGAY TEXT NOT NULL,"+
+                "BUOI TEXT NOT NULL,"+
+
+                "PRIMARY KEY(MALOP, MAGV, MACHUYENDE, NAMHOC, HOCKY, NGAY, BUOI),"+
+                "FOREIGN KEY (MALOP) REFERENCES tblLOP(MALOP),"+
+                "FOREIGN KEY (MAGV) REFERENCES tblGIANGVIEN(MAGV),"+
+                "FOREIGN KEY (MACHUYENDE) REFERENCES tblCHUYENDE(MACHUYENDE));";
         if (doAction(sql) == true) {
             Toast.makeText(CSDLile.this, "Tạo Table [TKB] thành công", Toast.LENGTH_SHORT).show();
         } else {

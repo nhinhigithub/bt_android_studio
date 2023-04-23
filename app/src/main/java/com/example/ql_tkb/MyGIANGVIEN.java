@@ -26,7 +26,6 @@ public class MyGIANGVIEN {
         msg+="Tên giảng viên: "+ this.tenGV + "\n";
 
         //msg+="Phái: "+ this.Phai + "\n";
-
         //msg+="Ngày sinh: "+ this.Ngaysinh + "\n";
         //msg+="Địa chỉ: "+ this.Diachi + "\n";
 
